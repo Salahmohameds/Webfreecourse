@@ -1,0 +1,85 @@
+✅ CORE REQUIREMENTS CHECKLIST
+📦 Bootstrap Components (MANDATORY)
+Component	Usage Example
+✅ Navbar	Top navigation bar with logo & links
+✅ Cards	Display courses or companies in grid cards
+✅ Buttons	Enroll buttons, contact us, etc.
+✅ Forms	Contact form with validation
+✅ Tables	Company tracker table
+✅ Alerts	Notification message (e.g., form submitted)
+✅ Badges	Show course difficulty (e.g., Beginner 🔰)
+✅ Breadcrumbs	Navigation helper on subpages
+✅ Button Groups	Filter courses by category
+✅ List Groups	Sidebar list of course platforms
+✅ Progress Bars	Show course completion %
+✅ Spinners	Loading spinner on fake chatbot page
+✅ Pagination	Paginate courses or blog posts
+✅ Accordion	FAQ section or course syllabus
+✅ Tabs or Pills	Switch between course details & reviews
+
+🎨 CUSTOM STYLING
+CSS Custom Color Palette (custom-styles.css)
+css
+Copy
+Edit
+:root {
+  --bs-primary: #0066cc;      /* Blue */
+  --bs-secondary: #ffcc00;    /* Yellow */
+  --bs-success: #28a745;
+  --bs-danger: #dc3545;
+  --bs-warning: #ffc107;
+}
+body {
+  background-color: #f8f9fa;
+}
+Tips:
+Use color variables across all buttons, badges, alerts.
+
+Apply consistent heading styles.
+
+Keep margins, paddings, and font styles aligned.
+
+💡 BONUS COMPONENTS (EXTRA CREDIT)
+Component	Suggested Use
+✅ Carousel	Highlight top 3 trending courses on homepage
+✅ Modal	Login or signup pop-up
+✅ Tooltips	Show info on hover (e.g., course rating)
+✅ Popovers	Extra info on a button click
+✅ Collapse	Toggle hidden FAQs or more info
+✅ Dropdowns	Course categories in navbar
+✅ Toasts	Success message after form submission
+✅ Offcanvas Menu	Responsive sidebar on mobile view
+
+📋 README.md CONTENT (Optional)
+markdown
+Copy
+Edit
+# LearnMate – Bootstrap 5 Responsive Website
+
+## Overview
+A responsive web application for computer science learners. Provides free course recommendations, company insights, and a chatbot assistant.
+
+## Features
+- Fully responsive using Bootstrap 5
+- Custom color palette
+- Navbar, cards, badges, and all required components
+- Bonus JS features: Carousel, Modal, Toasts, etc.
+
+## Custom Color Palette
+- Primary: #0066cc (Blue)
+- Secondary: #ffcc00 (Yellow)
+- Success: #28a745
+- Warning: #ffc107
+- Danger: #dc3545
+
+## Author
+Salah Mohamed Salah – Web Development Course Project
+📑 PRE-SUBMISSION CHECKLIST
+✅ All 15 required Bootstrap components used
+✅ All bonus components included (if going for extra credit)
+✅ Fully responsive (test with dev tools: mobile, tablet, desktop)
+✅ Consistent color palette
+✅ Clean and valid HTML/CSS
+✅ Code structured and well-commented
+✅ No broken links or images
+✅ All pages linked correctly (Navbar, Footer, Buttons)
