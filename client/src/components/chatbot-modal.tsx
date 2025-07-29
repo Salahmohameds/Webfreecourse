@@ -3,34 +3,40 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Bot, Send, RotateCcw, GraduationCap, Code, Brain, Shield, BarChart3 } from "lucide-react";
-import { 
-  ChatMessage, 
-  ChatStep, 
-  UserInterests, 
-  handleChatResponse, 
-  handleSpecialization, 
-  getCourseRecommendations 
-} from "@/lib/chatbot-logic";
+import { Bot, Send, RotateCcw, MessageCircle, User } from "lucide-react";
+import { useLanguage } from "@/hooks/use-language";
 import { useToast } from "@/hooks/use-toast";
 
-interface ChatbotModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+interface ChatMessage {
+  id: number;
+  type: 'user' | 'bot';
+  content: string;
 }
 
-export default function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
-  const [messages, setMessages] = useState<ChatMessage[]>([
-    {
-      id: 1,
-      type: 'bot',
-      content: "Hi! I'm here to help you find the perfect tech career path. What interests you most?"
-    }
-  ]);
-  const [currentStep, setCurrentStep] = useState<ChatStep>('initial');
-  const [userInterests, setUserInterests] = useState<UserInterests>({});
-  const [inputValue, setInputValue] = useState("");
+export default function ChatbotModal() {
+  const { t, isRTL } = useLanguage();
   const { toast } = useToast();
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [inputValue, setInputValue] = useState("");
+  const [isThinking, setIsThinking] = useState(false);
+
+  const initializeChat = () => {
+    setMessages([
+      {
+        id: 1,
+        type: 'bot',
+        content: t.chatbot.subtitle
+      }
+    ]);
+  };
+
+  const openChatbot = () => {
+    setIsOpen(true);
+    if (messages.length === 0) {
+      initializeChat();
+    }
+  };
 
   const addMessage = (type: 'user' | 'bot', content: string) => {
     const newMessage: ChatMessage = {
@@ -41,307 +47,211 @@ export default function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
     setMessages(prev => [...prev, newMessage]);
   };
 
-  const handleInterestSelection = (interest: string) => {
-    const response = handleChatResponse(interest);
+  const getAIResponse = (userMessage: string): string => {
+    const lowerMessage = userMessage.toLowerCase();
     
-    addMessage('user', `I'm interested in ${interest.replace('-', ' ')}`);
+    // Career path questions
+    if (lowerMessage.includes('career') || lowerMessage.includes('path') || lowerMessage.includes('مسار') || lowerMessage.includes('مهنة')) {
+      return isRTL 
+        ? "يمكنك اختيار من عدة مسارات مهنية في التقنية مثل تطوير الويب، تطوير التطبيقات، الذكاء الاصطناعي، علم البيانات، والأمن السيبراني. ما الذي يثير اهتمامك أكثر؟"
+        : "You can choose from several tech career paths like web development, mobile app development, AI/ML, data science, and cybersecurity. What interests you most?";
+    }
     
-    setTimeout(() => {
-      addMessage('bot', response.message);
-      setCurrentStep('specialization');
-      setUserInterests({ primary: interest });
-    }, 1000);
+    // Course recommendations
+    if (lowerMessage.includes('course') || lowerMessage.includes('learn') || lowerMessage.includes('كورس') || lowerMessage.includes('تعلم')) {
+      return isRTL
+        ? "أنصحك بالبدء بالأساسيات مثل HTML/CSS/JavaScript لتطوير الويب، أو Python للذكاء الاصطناعي وعلم البيانات. تحقق من قسم الكورسات لدينا للحصول على موارد مجانية!"
+        : "I recommend starting with fundamentals like HTML/CSS/JavaScript for web development, or Python for AI and data science. Check out our courses section for free resources!";
+    }
+    
+    // Skills in demand
+    if (lowerMessage.includes('skill') || lowerMessage.includes('demand') || lowerMessage.includes('مهارة') || lowerMessage.includes('مطلوب')) {
+      return isRTL
+        ? "المهارات الأكثر طلباً حالياً تشمل: React/Next.js، Python، الحوسبة السحابية (AWS/Azure)، الذكاء الاصطناعي، وDevOps. التعلم المستمر مهم جداً في مجال التقنية!"
+        : "The most in-demand skills currently include: React/Next.js, Python, cloud computing (AWS/Azure), AI/ML, and DevOps. Continuous learning is key in tech!";
+    }
+    
+    // Job finding
+    if (lowerMessage.includes('job') || lowerMessage.includes('find') || lowerMessage.includes('وظيفة') || lowerMessage.includes('عمل')) {
+      return isRTL
+        ? "لإيجاد وظائف في التقنية: 1) أنشئ ملف GitHub قوي 2) تدرب على مشاريع عملية 3) تواصل مع المجتمع التقني 4) تحقق من قسم الشركات لدينا للفرص المتاحة!"
+        : "To find tech jobs: 1) Build a strong GitHub portfolio 2) Practice with real projects 3) Network with the tech community 4) Check our companies section for opportunities!";
+    }
+
+    // Greetings
+    if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('مرحبا') || lowerMessage.includes('أهلا')) {
+      return isRTL
+        ? "مرحباً! أنا هنا لمساعدتك في مسيرتك التقنية. يمكنني الإجابة على أسئلة حول المسارات المهنية، الكورسات، أو المهارات المطلوبة. كيف يمكنني مساعدتك؟"
+        : "Hello! I'm here to help with your tech journey. I can answer questions about career paths, courses, or in-demand skills. How can I assist you?";
+    }
+    
+    // Default response
+    return isRTL
+      ? "شكراً لسؤالك! أنا هنا لمساعدتك في رحلتك التقنية. يمكنك سؤالي عن المسارات المهنية، الكورسات، المهارات المطلوبة، أو كيفية إيجاد وظائف في التقنية."
+      : "Thanks for your question! I'm here to help with your tech journey. You can ask me about career paths, courses, in-demand skills, or how to find tech jobs.";
   };
 
-  const handleSpecializationSelection = (specialization: string) => {
-    const updatedInterests = { ...userInterests, specialization };
-    
-    addMessage('user', specialization.replace('-', ' '));
+  const handleQuickQuestion = (question: string) => {
+    addMessage('user', question);
+    setIsThinking(true);
     
     setTimeout(() => {
-      const recommendations = getCourseRecommendations(userInterests.primary!, specialization);
-      
-      const recommendationMessage = `
-        Perfect! Based on your interests in ${userInterests.primary?.replace('-', ' ')} and ${specialization.replace('-', ' ')}, here are my recommendations:
-
-        **Recommended Courses:**
-        ${recommendations.courses.map(course => `• ${course}`).join('\n')}
-
-        **Career Path:** ${recommendations.career}
-
-        **Next Steps:**
-        ${recommendations.steps.map((step, index) => `${index + 1}. ${step}`).join('\n')}
-      `;
-      
-      addMessage('bot', recommendationMessage);
-      setCurrentStep('complete');
-      setUserInterests(updatedInterests);
-      
-      toast({
-        title: "Career guidance complete!",
-        description: "Check out your personalized recommendations.",
-      });
+      const response = getAIResponse(question);
+      addMessage('bot', response);
+      setIsThinking(false);
     }, 1500);
   };
 
-  const sendCustomMessage = () => {
+  const handleSendMessage = () => {
     if (!inputValue.trim()) return;
     
-    addMessage('user', inputValue);
-    
-    setTimeout(() => {
-      addMessage('bot', "Thank you for your question! For specific queries, please use the category buttons above for the best personalized recommendations. You can also reach out through our contact form for detailed assistance.");
-    }, 1000);
-    
+    const userMessage = inputValue.trim();
     setInputValue("");
-  };
-
-  const restartChat = () => {
-    setMessages([
-      {
-        id: 1,
-        type: 'bot',
-        content: "Hi! I'm here to help you find the perfect tech career path. What interests you most?"
-      }
-    ]);
-    setCurrentStep('initial');
-    setUserInterests({});
-  };
-
-  const goToCourses = () => {
-    onClose();
+    addMessage('user', userMessage);
+    setIsThinking(true);
+    
     setTimeout(() => {
-      const element = document.getElementById('courses');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 500);
+      const response = getAIResponse(userMessage);
+      addMessage('bot', response);
+      setIsThinking(false);
+    }, 1500);
   };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
+  };
+
+  const resetChat = () => {
+    setMessages([]);
+    initializeChat();
+    toast({
+      title: t.common.loading,
+      description: isRTL ? "تم بدء محادثة جديدة" : "New conversation started",
+    });
+  };
+
+  const quickQuestions = [
+    t.chatbot.questions.career,
+    t.chatbot.questions.courses,
+    t.chatbot.questions.skills,
+    t.chatbot.questions.jobs
+  ];
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl h-[600px] flex flex-col">
-        <DialogHeader className="bg-primary text-primary-foreground p-4 -m-6 mb-4 rounded-t-lg">
-          <DialogTitle className="flex items-center">
-            <Bot className="mr-2 h-5 w-5" />
-            AI Career Assistant
-          </DialogTitle>
-        </DialogHeader>
+    <>
+      {/* Floating Chat Button */}
+      <Button
+        onClick={openChatbot}
+        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50 hover:scale-110 transition-transform"
+        size="icon"
+      >
+        <MessageCircle className="h-6 w-6" />
+      </Button>
 
-        <ScrollArea className="flex-1 pr-4">
-          <div className="space-y-4">
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`chat-message p-3 rounded-lg ${
-                  message.type === 'user' 
-                    ? 'chat-message user ml-auto bg-primary text-primary-foreground' 
-                    : 'chat-message bot bg-muted'
-                }`}
-              >
-                <strong>{message.type === 'user' ? 'You' : 'AI Assistant'}:</strong>{' '}
-                <span className="whitespace-pre-line">{message.content}</span>
+      {/* Chat Modal */}
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className={`max-w-md h-[600px] flex flex-col ${isRTL ? 'font-arabic' : ''}`}>
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Bot className="h-5 w-5 text-primary" />
+              {t.chatbot.title}
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className="flex-1 flex flex-col">
+            {/* Chat Messages */}
+            <ScrollArea className="flex-1 mb-4">
+              <div className="space-y-4 p-4">
+                {messages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className={`max-w-[80%] rounded-lg p-3 ${
+                        message.type === 'user'
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-muted text-muted-foreground'
+                      }`}
+                    >
+                      <div className="flex items-start gap-2">
+                        {message.type === 'bot' && <Bot className="h-4 w-4 mt-1 shrink-0" />}
+                        <p className="text-sm">{message.content}</p>
+                        {message.type === 'user' && <User className="h-4 w-4 mt-1 shrink-0" />}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                
+                {isThinking && (
+                  <div className="flex justify-start">
+                    <div className="bg-muted text-muted-foreground rounded-lg p-3">
+                      <div className="flex items-center gap-2">
+                        <Bot className="h-4 w-4" />
+                        <p className="text-sm">{t.chatbot.thinking}</p>
+                        <div className="flex space-x-1">
+                          <div className="h-2 w-2 bg-primary rounded-full animate-bounce"></div>
+                          <div className="h-2 w-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                          <div className="h-2 w-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            ))}
+            </ScrollArea>
+
+            {/* Quick Questions */}
+            {messages.length <= 1 && (
+              <div className="mb-4">
+                <p className="text-sm text-muted-foreground mb-2">Quick questions:</p>
+                <div className="grid grid-cols-1 gap-2">
+                  {quickQuestions.map((question, index) => (
+                    <Button
+                      key={index}
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleQuickQuestion(question)}
+                      className="text-left justify-start text-xs h-auto py-2 px-3"
+                    >
+                      {question}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Input Area */}
+            <div className="flex gap-2">
+              <Input
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyPress={handleKeyPress}
+                placeholder={t.chatbot.placeholder}
+                className="flex-1"
+                disabled={isThinking}
+              />
+              <Button 
+                onClick={handleSendMessage} 
+                size="icon"
+                disabled={!inputValue.trim() || isThinking}
+              >
+                <Send className="h-4 w-4" />
+              </Button>
+              <Button 
+                onClick={resetChat} 
+                variant="outline" 
+                size="icon"
+                title={t.chatbot.restart}
+              >
+                <RotateCcw className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
-        </ScrollArea>
-
-        <div className="space-y-4 border-t pt-4">
-          {currentStep === 'initial' && (
-            <div className="grid grid-cols-2 gap-2">
-              <Button
-                variant="outline"
-                onClick={() => handleInterestSelection('web-development')}
-                className="h-auto py-3"
-              >
-                <Code className="mr-2 h-4 w-4" />
-                Web Development
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleInterestSelection('data-science')}
-                className="h-auto py-3"
-              >
-                <BarChart3 className="mr-2 h-4 w-4" />
-                Data Science
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleInterestSelection('ai-ml')}
-                className="h-auto py-3"
-              >
-                <Brain className="mr-2 h-4 w-4" />
-                AI & Machine Learning
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleInterestSelection('cybersecurity')}
-                className="h-auto py-3"
-              >
-                <Shield className="mr-2 h-4 w-4" />
-                Cybersecurity
-              </Button>
-            </div>
-          )}
-
-          {currentStep === 'specialization' && userInterests.primary === 'web-development' && (
-            <div className="grid grid-cols-2 gap-2">
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('frontend')}
-                className="h-auto py-3"
-              >
-                Frontend Development
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('backend')}
-                className="h-auto py-3"
-              >
-                Backend Development
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('fullstack')}
-                className="h-auto py-3"
-              >
-                Full Stack
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('mobile')}
-                className="h-auto py-3"
-              >
-                Mobile Development
-              </Button>
-            </div>
-          )}
-
-          {currentStep === 'specialization' && userInterests.primary === 'data-science' && (
-            <div className="grid grid-cols-2 gap-2">
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('analytics')}
-                className="h-auto py-3"
-              >
-                Data Analytics
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('visualization')}
-                className="h-auto py-3"
-              >
-                Data Visualization
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('statistics')}
-                className="h-auto py-3"
-              >
-                Statistics & Research
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('business-intelligence')}
-                className="h-auto py-3"
-              >
-                Business Intelligence
-              </Button>
-            </div>
-          )}
-
-          {currentStep === 'specialization' && userInterests.primary === 'ai-ml' && (
-            <div className="grid grid-cols-2 gap-2">
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('machine-learning')}
-                className="h-auto py-3"
-              >
-                Machine Learning
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('deep-learning')}
-                className="h-auto py-3"
-              >
-                Deep Learning
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('nlp')}
-                className="h-auto py-3"
-              >
-                Natural Language Processing
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('computer-vision')}
-                className="h-auto py-3"
-              >
-                Computer Vision
-              </Button>
-            </div>
-          )}
-
-          {currentStep === 'specialization' && userInterests.primary === 'cybersecurity' && (
-            <div className="grid grid-cols-2 gap-2">
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('ethical-hacking')}
-                className="h-auto py-3"
-              >
-                Ethical Hacking
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('network-security')}
-                className="h-auto py-3"
-              >
-                Network Security
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('incident-response')}
-                className="h-auto py-3"
-              >
-                Incident Response
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleSpecializationSelection('compliance')}
-                className="h-auto py-3"
-              >
-                Security Compliance
-              </Button>
-            </div>
-          )}
-
-          {currentStep === 'complete' && (
-            <div className="flex justify-center space-x-4">
-              <Button onClick={goToCourses}>
-                <GraduationCap className="mr-2 h-4 w-4" />
-                View Recommended Courses
-              </Button>
-              <Button variant="outline" onClick={restartChat}>
-                <RotateCcw className="mr-2 h-4 w-4" />
-                Start Over
-              </Button>
-            </div>
-          )}
-
-          <div className="flex space-x-2">
-            <Input
-              placeholder="Type your question..."
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && sendCustomMessage()}
-            />
-            <Button onClick={sendCustomMessage} size="icon">
-              <Send className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </DialogContent>
-    </Dialog>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
