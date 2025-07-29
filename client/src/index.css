@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(187, 100%, 38%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  --success: hsl(122, 39%, 49%);
+  --warning: hsl(33, 100%, 50%);
+  --info: hsl(207, 90%, 54%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(187, 100%, 38%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  --success: hsl(122, 39%, 49%);
+  --warning: hsl(33, 100%, 50%);
+  --info: hsl(207, 90%, 54%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(207, 90%, 54%), hsl(187, 100%, 38%));
+  }
+  
+  .hero-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+  
+  .bg-pattern {
+    background-color: hsl(60, 4.8%, 95.9%);
+    background-image: radial-gradient(circle at 1px 1px, hsla(207, 90%, 54%, 0.1) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+  
+  .dark .bg-pattern {
+    background-color: hsl(240, 3.7%, 15.9%);
+    background-image: radial-gradient(circle at 1px 1px, hsla(207, 90%, 54%, 0.2) 1px, transparent 0);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+
+  .fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .chat-message {
+    max-width: 80%;
+    word-wrap: break-word;
+  }
+
+  .chat-message.user {
+    margin-left: auto;
+    background-color: hsl(207, 90%, 54%);
+    color: white;
+  }
+
+  .chat-message.bot {
+    background-color: hsl(60, 4.8%, 95.9%);
+    color: hsl(20, 14.3%, 4.1%);
+  }
+
+  .dark .chat-message.bot {
+    background-color: hsl(240, 3.7%, 15.9%);
+    color: hsl(0, 0%, 98%);
+  }
+
+  .testimonial-border {
+    border-left: 4px solid hsl(207, 90%, 54%);
+  }
+
+  .floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 50;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.15);
+  }
+
+  .progress-custom {
+    height: 10px;
+    border-radius: 50px;
+  }
+
+  .company-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .stats-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: hsl(207, 90%, 54%);
+  }
+
+  .navbar-blur {
+    background: hsla(240, 10%, 3.9%, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .course-filter-gap > * {
+    margin: 0.25rem;
+  }
+}
