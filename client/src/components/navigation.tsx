@@ -22,6 +22,8 @@ export default function Navigation() {
     { href: "/", label: t.nav.home },
     { href: "/courses", label: t.nav.courses },
     { href: "/companies", label: t.nav.companies },
+    { href: "/jobs", label: isRTL ? "الوظائف" : "Jobs" },
+    { href: "/research", label: isRTL ? "الأبحاث" : "Research" },
     { href: "/about", label: t.nav.about },
     { href: "/contact", label: t.nav.contact },
   ];
@@ -33,14 +35,14 @@ export default function Navigation() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 navbar-blur border-b ${isRTL ? 'font-arabic' : ''}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 border-b bg-background/95 backdrop-blur-sm ${isRTL ? 'font-arabic' : ''}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center space-x-2 text-xl font-bold cursor-pointer">
               <Rocket className="h-6 w-6 text-primary" />
-              <span>{t.home.title}</span>
+              <span className="text-foreground">{t.home.title}</span>
             </div>
           </Link>
 
@@ -66,7 +68,7 @@ export default function Navigation() {
             {/* Language Switcher */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="text-foreground">
                   <Languages className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -81,7 +83,7 @@ export default function Navigation() {
             </DropdownMenu>
 
             {/* Dark Mode Toggle */}
-            <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
+            <Button variant="ghost" size="icon" onClick={toggleDarkMode} className="text-foreground">
               {isDarkMode ? (
                 <Sun className="h-4 w-4" />
               ) : (
@@ -92,7 +94,7 @@ export default function Navigation() {
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden">
+                <Button variant="ghost" size="icon" className="lg:hidden text-foreground">
                   <Menu className="h-4 w-4" />
                 </Button>
               </SheetTrigger>

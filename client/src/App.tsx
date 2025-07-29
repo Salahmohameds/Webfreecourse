@@ -13,6 +13,8 @@ import CompaniesPage from "@/pages/companies";
 import AboutPage from "@/pages/about";
 import ContactPage from "@/pages/contact";
 import NotFound from "@/pages/not-found";
+import ResearchPage from "@/pages/research";
+import JobsPage from "@/pages/jobs";
 
 function Router() {
   const { t, isRTL } = useLanguage();
@@ -27,6 +29,8 @@ function Router() {
           <Route path="/companies" component={CompaniesPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/research" component={ResearchPage} />
+          <Route path="/jobs" component={JobsPage} />
           <Route component={NotFound} />
         </Switch>
       </main>

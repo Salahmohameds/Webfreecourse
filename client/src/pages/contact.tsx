@@ -55,20 +55,20 @@ export default function ContactPage() {
     {
       icon: <Mail className="h-6 w-6" />,
       title: isRTL ? "البريد الإلكتروني" : "Email",
-      value: "hello@techpathfinder.com",
+      value: "Salah.abdelhady.200@Gmail.com",
       description: isRTL ? "نرد خلال 24 ساعة" : "We respond within 24 hours"
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: isRTL ? "الهاتف" : "Phone",
-      value: "+1 (555) 123-4567",
-      description: isRTL ? "متاح من 9ص إلى 5م" : "Available 9 AM - 5 PM EST"
+      value: "+20 01222414227",
+      description: isRTL ? "متاح من 9ص إلى 5م بتوقيت شرق الولايات المتحدة" : "Available 9 AM - 5 PM EST"
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: isRTL ? "العنوان" : "Address",
-      value: isRTL ? "سان فرانسيسكو، كاليفورنيا" : "San Francisco, CA",
-      description: isRTL ? "الولايات المتحدة الأمريكية" : "United States"
+      value: isRTL ? "مصر" : "EGYPT",
+      description: isRTL ? "جمهورية مصر العربية" : "Arab Republic of Egypt"
     }
   ];
 
@@ -199,16 +199,19 @@ export default function ContactPage() {
                 <CardContent>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>{isRTL ? "الإثنين - الجمعة" : "Monday - Friday"}</span>
-                      <span>9:00 AM - 6:00 PM</span>
+                      <span>{isRTL ? "الأحد - الخميس" : "Sunday - Thursday"}</span>
+                      <span>9:00 AM - 5:00 PM</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>{isRTL ? "الجمعة" : "Friday"}</span>
+                      <span>10:00 AM - 2:00 PM</span>
                     </div>
                     <div className="flex justify-between">
                       <span>{isRTL ? "السبت" : "Saturday"}</span>
-                      <span>10:00 AM - 4:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>{isRTL ? "الأحد" : "Sunday"}</span>
                       <span className="text-muted-foreground">{isRTL ? "مغلق" : "Closed"}</span>
+                    </div>
+                    <div className="pt-2 border-t text-xs text-muted-foreground">
+                      {isRTL ? "بتوقيت مصر (GMT+2)" : "Egypt Time (GMT+2)"}
                     </div>
                   </div>
                 </CardContent>

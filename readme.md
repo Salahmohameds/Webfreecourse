@@ -80,7 +80,6 @@ Preferred communication style: Simple, everyday language.
 - **Build Tools**: Vite with React plugin and ESBuild
 
 ### Development Tools
-- **Replit Integration**: Cartographer plugin and error overlay for development
 - **Type Checking**: TypeScript with strict mode enabled
 - **Code Quality**: Path aliases for clean imports
 

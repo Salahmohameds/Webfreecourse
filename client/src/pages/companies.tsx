@@ -65,189 +65,2537 @@ export default function CompaniesPage() {
   const companies = [
     {
       id: "1",
-      name: "Google",
-      logo: "🔍",
-      location: isRTL ? "ماウنتن فيو، كاليفورنيا" : "Mountain View, CA",
-      type: "remote",
-      roles: [
-        {
-          title: isRTL ? "مهندس برمجيات - متدرب" : "Software Engineer - Intern",
-          department: isRTL ? "الهندسة" : "Engineering",
-          salary: "$8,000/month",
-          posted: "2 days ago",
-          isNew: true,
-          isUrgent: false
-        },
-        {
-          title: isRTL ? "مطور Full Stack" : "Full Stack Developer",
-          department: isRTL ? "المنتج" : "Product",
-          salary: "$120K-150K",
-          posted: "1 week ago",
-          isNew: false,
-          isUrgent: true
-        }
-      ],
-      rating: 4.8,
-      employees: "100K+",
-      industry: isRTL ? "التقنية" : "Technology",
-      description: isRTL 
-        ? "شركة تقنية عالمية رائدة في محركات البحث والحوسبة السحابية"
-        : "Leading global technology company in search engines and cloud computing"
-    },
-    {
-      id: "2",
-      name: "Microsoft",
-      logo: "🖥️",
-      location: isRTL ? "ريدموند، واشنطن" : "Redmond, WA",
-      type: "hybrid",
-      roles: [
-        {
-          title: isRTL ? "مطور Azure" : "Azure Developer",
-          department: isRTL ? "الحوسبة السحابية" : "Cloud",
-          salary: "$130K-160K",
-          posted: "3 days ago",
-          isNew: true,
-          isUrgent: false
-        },
-        {
-          title: isRTL ? "مهندس AI" : "AI Engineer",
-          department: isRTL ? "الذكاء الاصطناعي" : "AI Research",
-          salary: "$140K-170K",
-          posted: "5 days ago",
-          isNew: false,
-          isUrgent: true
-        }
-      ],
-      rating: 4.7,
-      employees: "200K+",
-      industry: isRTL ? "البرمجيات" : "Software",
-      description: isRTL
-        ? "شركة تقنية متعددة الجنسيات تركز على البرمجيات والخدمات"
-        : "Multinational technology company focused on software and services"
-    },
-    {
-      id: "3",
-      name: "Meta",
-      logo: "📘",
-      location: isRTL ? "مينلو بارك، كاليفورنيا" : "Menlo Park, CA",
+      name: "Advansys",
+      logo: "🏢",
+      location: "Egypt",
       type: "onsite",
       roles: [
         {
-          title: isRTL ? "مهندس Frontend" : "Frontend Engineer",
-          department: isRTL ? "المنتج" : "Product",
-          salary: "$125K-155K",
-          posted: "1 day ago",
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
           isNew: true,
-          isUrgent: true
+          isUrgent: false
         },
         {
-          title: isRTL ? "عالم بيانات" : "Data Scientist",
-          department: isRTL ? "البيانات" : "Data",
-          salary: "$135K-165K",
-          posted: "4 days ago",
-          isNew: false,
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.5,
+      employees: "100+",
+      industry: "Consulting Services, Software House",
+      description: "Leading technology consulting and software development company",
+      linkedin: "https://www.linkedin.com/company/advansys-esc/",
+      careers: ""
+    },
+    {
+      id: "2",
+      name: "Al Ahly Momkn",
+      logo: "🏦",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "200+",
+      industry: "Finance / Banking",
+      description: "Digital payment and financial services company",
+      linkedin: "https://www.linkedin.com/company/alahlymomknfore-payments/",
+      careers: "https://alahlymomkn.zohorecruit.com/jobs/Careers"
+    },
+    {
+      id: "3",
+      name: "Algoriza",
+      logo: "💻",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Front-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "50+",
+      industry: "Consulting Services, Software House",
+      description: "Software development and consulting services",
+      linkedin: "https://www.linkedin.com/company/algoriza/",
+      careers: ""
+    },
+    {
+      id: "4",
+      name: "AMAN Holding",
+      logo: "🏛️",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Science",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "500+",
+      industry: "Finance / Banking",
+      description: "Financial services and investment holding company",
+      linkedin: "https://www.linkedin.com/company/aman-holding-for-financials/",
+      careers: ""
+    },
+    {
+      id: "5",
+      name: "Aramex",
+      logo: "📦",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "1000+",
+      industry: "Transportation",
+      description: "Global logistics and transportation company",
+      linkedin: "https://www.linkedin.com/company/aramex/",
+      careers: "https://www.aramex.com/eg/ar/join-the-aramex-family"
+    },
+    {
+      id: "6",
+      name: "Atos",
+      logo: "🌐",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Science",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.0,
+      employees: "2000+",
+      industry: "Consulting Services, Software House",
+      description: "Global digital transformation and IT services",
+      linkedin: "https://www.linkedin.com/company/atos/",
+      careers: "https://atos.net/advancing-what-matters/en/join-us"
+    },
+    {
+      id: "7",
+      name: "b_labs",
+      logo: "🔬",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Science",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
           isUrgent: false
         }
       ],
       rating: 4.6,
-      employees: "80K+",
-      industry: isRTL ? "وسائل التواصل" : "Social Media",
-      description: isRTL
-        ? "شركة وسائل تواصل اجتماعي وتقنيات الواقع الافتراضي"
-        : "Social media and virtual reality technology company"
+      employees: "100+",
+      industry: "Software House",
+      description: "Innovative software development and technology solutions",
+      linkedin: "https://www.linkedin.com/company/wearablabs/posts/?feedView=all",
+      careers: ""
     },
     {
-      id: "4",
-      name: "Amazon",
-      logo: "📦",
-      location: isRTL ? "سياتل، واشنطن" : "Seattle, WA",
-      type: "remote",
-      roles: [
-        {
-          title: isRTL ? "مهندس DevOps" : "DevOps Engineer",
-          department: isRTL ? "البنية التحتية" : "Infrastructure",
-          salary: "$115K-145K",
-          posted: "6 days ago",
-          isNew: false,
-          isUrgent: false
-        },
-        {
-          title: isRTL ? "مطور Backend" : "Backend Developer",
-          department: isRTL ? "الخدمات" : "Services",
-          salary: "$120K-150K",
-          posted: "2 days ago",
-          isNew: true,
-          isUrgent: true
-        }
-      ],
-      rating: 4.5,
-      employees: "1.5M+",
-      industry: isRTL ? "التجارة الإلكترونية" : "E-commerce",
-      description: isRTL
-        ? "شركة تجارة إلكترونية وحوسبة سحابية عالمية"
-        : "Global e-commerce and cloud computing company"
-    },
-    {
-      id: "5",
-      name: "Apple",
-      logo: "🍎",
-      location: isRTL ? "كوبرتينو، كاليفورنيا" : "Cupertino, CA",
+      id: "8",
+      name: "BARQ Systems",
+      logo: "🛡️",
+      location: "Egypt, KSA, UAE",
       type: "onsite",
       roles: [
         {
-          title: isRTL ? "مطور iOS" : "iOS Developer",
-          department: isRTL ? "المنتج" : "Product",
-          salary: "$130K-160K",
-          posted: "3 days ago",
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
           isNew: true,
           isUrgent: false
         },
         {
-          title: isRTL ? "مهندس أمن" : "Security Engineer",
-          department: isRTL ? "الأمان" : "Security",
-          salary: "$140K-170K",
-          posted: "1 week ago",
-          isNew: false,
-          isUrgent: true
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
         }
       ],
-      rating: 4.9,
-      employees: "150K+",
-      industry: isRTL ? "الإلكترونيات" : "Electronics",
-      description: isRTL
-        ? "شركة تقنية تصمم وتطور الإلكترونيات الاستهلاكية"
-        : "Technology company that designs and develops consumer electronics"
+      rating: 4.3,
+      employees: "150+",
+      industry: "Consulting Services, Cyber Security services, Software House",
+      description: "Cybersecurity and software development solutions",
+      linkedin: "https://www.linkedin.com/company/barqsystems/",
+      careers: ""
     },
     {
-      id: "6",
-      name: "Netflix",
-      logo: "🎬",
-      location: isRTL ? "لوس جاتوس، كاليفورنيا" : "Los Gatos, CA",
-      type: "hybrid",
+      id: "9",
+      name: "BBI",
+      logo: "🤖",
+      location: "Egypt",
+      type: "onsite",
       roles: [
         {
-          title: isRTL ? "مهندس بيانات" : "Data Engineer",
-          department: isRTL ? "التحليلات" : "Analytics",
-          salary: "$125K-155K",
-          posted: "4 days ago",
-          isNew: false,
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
           isUrgent: false
         },
         {
-          title: isRTL ? "مطور React" : "React Developer",
-          department: isRTL ? "المنتج" : "Product",
-          salary: "$115K-145K",
-          posted: "2 days ago",
+          title: "Data Science",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
           isNew: true,
-          isUrgent: true
+          isUrgent: false
         }
       ],
       rating: 4.4,
-      employees: "12K+",
-      industry: isRTL ? "الترفيه" : "Entertainment",
-      description: isRTL
-        ? "منصة بث وإنتاج محتوى رقمي عالمية"
-        : "Global streaming and digital content production platform"
+      employees: "80+",
+      industry: "Consulting Services, Software House",
+      description: "AI and data analytics consulting services",
+      linkedin: "https://www.linkedin.com/company/bbiai/",
+      careers: ""
+    },
+    {
+      id: "10",
+      name: "Beinex",
+      logo: "📊",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "120+",
+      industry: "Consulting Services, Software House",
+      description: "Data analytics and consulting services",
+      linkedin: "https://www.linkedin.com/company/beinex-consulting/",
+      careers: "https://www.beinex.com/careers"
+    },
+    {
+      id: "11",
+      name: "BI-Technologies",
+      logo: "💻",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Front-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "80+",
+      industry: "Software House",
+      description: "Software development and technology solutions",
+      linkedin: "https://www.linkedin.com/company/bi-technologiesnet/",
+      careers: "https://www.bi-technologies.net/index.php/pages/pages_details/5"
+    },
+    {
+      id: "12",
+      name: "Bizimply",
+      logo: "🏢",
+      location: "Remote",
+      type: "remote",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "EURO",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Testing",
+          department: "Quality Assurance",
+          salary: "EURO",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "50+",
+      industry: "HR Management",
+      description: "HR management and workforce solutions",
+      linkedin: "https://www.linkedin.com/company/bizimply/",
+      careers: "https://www.bizimply.com/jobs/"
+    },
+    {
+      id: "13",
+      name: "BMB",
+      logo: "🛡️",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "100+",
+      industry: "Consulting Services, Cyber Security services, Software House",
+      description: "Cybersecurity and consulting services",
+      linkedin: "https://www.linkedin.com/company/bmb/",
+      careers: "https://bmbgroup.com/jobs/"
+    },
+    {
+      id: "14",
+      name: "Bosta",
+      logo: "🚚",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Front-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.5,
+      employees: "200+",
+      industry: "E-commerce, Software House",
+      description: "E-commerce and logistics solutions",
+      linkedin: "https://www.linkedin.com/company/bostaapp/",
+      careers: "https://jobs.lever.co/Bosta"
+    },
+    {
+      id: "15",
+      name: "Breadfast",
+      logo: "🥖",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "150+",
+      industry: "E-commerce",
+      description: "Food delivery and e-commerce platform",
+      linkedin: "https://www.linkedin.com/company/breadfast/",
+      careers: "https://www.breadfast.com/careers/"
+    },
+    {
+      id: "16",
+      name: "Buguard",
+      logo: "🛡️",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "80+",
+      industry: "Cyber Security services",
+      description: "Cybersecurity and digital protection services",
+      linkedin: "https://www.linkedin.com/company/buguard/",
+      careers: ""
+    },
+    {
+      id: "17",
+      name: "Careem",
+      logo: "🚗",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.6,
+      employees: "500+",
+      industry: "Transportation",
+      description: "Ride-hailing and transportation services",
+      linkedin: "https://www.linkedin.com/company/careem/about/",
+      careers: "https://www.careem.com/en-AE/careers"
+    },
+    {
+      id: "18",
+      name: "Cartona",
+      logo: "🛒",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "100+",
+      industry: "E-commerce",
+      description: "E-commerce and retail technology platform",
+      linkedin: "https://www.linkedin.com/company/cartona-egypt/",
+      careers: ""
+    },
+    {
+      id: "19",
+      name: "Cashcall",
+      logo: "💰",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "150+",
+      industry: "Finance / Banking",
+      description: "Digital payment and financial services",
+      linkedin: "https://www.linkedin.com/company/cashcallegypt/",
+      careers: ""
+    },
+    {
+      id: "20",
+      name: "Cegedim Egypt",
+      logo: "🏥",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Front-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.0,
+      employees: "200+",
+      industry: "Software House",
+      description: "Healthcare software and technology solutions",
+      linkedin: "https://www.linkedin.com/company/cegedim-egypt/",
+      careers: "https://careers.cegedim.com/en/annonces"
+    },
+    {
+      id: "21",
+      name: "Chefaa",
+      logo: "💊",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Science",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "120+",
+      industry: "Healthcare / Medical, Supply Chain",
+      description: "Healthcare and pharmaceutical delivery platform",
+      linkedin: "https://www.linkedin.com/company/getchefaa/",
+      careers: ""
+    },
+    {
+      id: "22",
+      name: "Cybertalents",
+      logo: "🔒",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "80+",
+      industry: "Cyber Security services, Staffing and Recruiting",
+      description: "Cybersecurity training and talent platform",
+      linkedin: "https://www.linkedin.com/company/cybertalent/",
+      careers: "https://cybertalents.com/jobs/browse"
+    },
+    {
+      id: "23",
+      name: "Cyshield",
+      logo: "🛡️",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.5,
+      employees: "150+",
+      industry: "Cyber Security services, Software House",
+      description: "Comprehensive cybersecurity and software solutions",
+      linkedin: "https://www.linkedin.com/company/cyshield/",
+      careers: "https://careers.cyshield.com/"
+    },
+    {
+      id: "24",
+      name: "Datain",
+      logo: "📊",
+      location: "Egypt, KSA",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Engineering",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "100+",
+      industry: "Consulting Services, Data Infrastructure and Analytics",
+      description: "Data infrastructure and analytics consulting",
+      linkedin: "https://www.linkedin.com/company/datainsa/",
+      careers: "https://datain.sa/#offerings"
+    },
+    {
+      id: "25",
+      name: "Dataplus",
+      logo: "📈",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Engineering",
+          department: "Data",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "80+",
+      industry: "Consulting Services, Data Infrastructure and Analytics",
+      description: "Data analytics and consulting services",
+      linkedin: "",
+      careers: ""
+    },
+    {
+      id: "26",
+      name: "Dayra",
+      logo: "🏦",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Front-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.0,
+      employees: "100+",
+      industry: "Finance / Banking",
+      description: "Digital banking and financial services",
+      linkedin: "",
+      careers: ""
+    },
+    {
+      id: "27",
+      name: "Dsquares",
+      logo: "🎯",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "200+",
+      industry: "Software House",
+      description: "Loyalty and customer engagement platform",
+      linkedin: "https://www.linkedin.com/company/dsquares/",
+      careers: "https://www.dsquares.com/careers"
+    },
+    {
+      id: "28",
+      name: "DXC Technology",
+      logo: "🌐",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "1000+",
+      industry: "Consulting Services, Software House",
+      description: "Global IT services and digital transformation",
+      linkedin: "https://www.linkedin.com/company/dxctechnology/",
+      careers: "https://careers.dxc.com/global/en"
+    },
+    {
+      id: "29",
+      name: "e-finance",
+      logo: "💳",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "500+",
+      industry: "Finance / Banking",
+      description: "Digital payment and financial infrastructure",
+      linkedin: "https://www.linkedin.com/company/e-finance/people/?facetCurrentFunction=13",
+      careers: ""
+    },
+    {
+      id: "30",
+      name: "Eductly",
+      logo: "🎓",
+      location: "Remote",
+      type: "remote",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Front-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "50+",
+      industry: "Higher Education, Startup",
+      description: "Educational technology and learning platform",
+      linkedin: "https://www.linkedin.com/company/educatly",
+      careers: "https://www.linkedin.com/company/educatly/jobs/"
+    },
+    {
+      id: "31",
+      name: "EG-CERT",
+      logo: "🔐",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.5,
+      employees: "100+",
+      industry: "Telecommunication",
+      description: "Egyptian Computer Emergency Response Team",
+      linkedin: "https://www.linkedin.com/company/ntraeg/",
+      careers: ""
+    },
+    {
+      id: "32",
+      name: "EJADA",
+      logo: "💼",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "150+",
+      industry: "Consulting Services, Software House",
+      description: "IT consulting and software development services",
+      linkedin: "https://www.linkedin.com/company/ejada/",
+      careers: "https://career.ejada.com/"
+    },
+    {
+      id: "33",
+      name: "elmenus",
+      logo: "🍽️",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Front-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "200+",
+      industry: "Startup",
+      description: "Food discovery and restaurant platform",
+      linkedin: "https://www.linkedin.com/company/elmenus.com/",
+      careers: "https://elmenus.recruitee.com/"
+    },
+    {
+      id: "34",
+      name: "Fixed Solutions",
+      logo: "🔧",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "120+",
+      industry: "Cyber Security services, Software House",
+      description: "Cybersecurity and software development solutions",
+      linkedin: "https://www.linkedin.com/company/fixed-solutions/",
+      careers: "https://solutions.fixed.global/en/careers"
+    },
+    {
+      id: "35",
+      name: "Gameball",
+      logo: "🎮",
+      location: "Remote",
+      type: "remote",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "80+",
+      industry: "",
+      description: "Gamification and customer engagement platform",
+      linkedin: "https://www.linkedin.com/company/gameball/",
+      careers: "https://www.gameball.co/careers"
+    },
+    {
+      id: "36",
+      name: "Geidea",
+      logo: "💳",
+      location: "Egypt, KSA",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "300+",
+      industry: "Finance / Banking, Software House",
+      description: "Digital payment and financial technology solutions",
+      linkedin: "https://www.linkedin.com/company/geidea/",
+      careers: ""
+    },
+    {
+      id: "37",
+      name: "Giza Systems",
+      logo: "🏢",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "500+",
+      industry: "Consulting Services, Software House",
+      description: "IT consulting and systems integration",
+      linkedin: "https://www.linkedin.com/company/giza-systems/people/?keywords=data",
+      careers: "https://www.gizasystemscareers.com/"
+    },
+    {
+      id: "38",
+      name: "Halan",
+      logo: "🚲",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "250+",
+      industry: "Finance / Banking",
+      description: "Micro-mobility and financial services platform",
+      linkedin: "https://www.linkedin.com/company/halan/",
+      careers: "https://jobs.halan.com/"
+    },
+    {
+      id: "39",
+      name: "Incorta",
+      logo: "📊",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "150+",
+      industry: "Software House",
+      description: "Data analytics and business intelligence platform",
+      linkedin: "https://www.linkedin.com/company/incorta/jobs/",
+      careers: "https://www.incorta.com/careers#positions"
+    },
+    {
+      id: "40",
+      name: "INFORT",
+      logo: "🛡️",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "100+",
+      industry: "Consulting Services, Cyber Security services, Software House",
+      description: "Cybersecurity and IT consulting services",
+      linkedin: "https://www.linkedin.com/company/infort/",
+      careers: "https://www.infort.co/careers/"
+    },
+    {
+      id: "41",
+      name: "Inovasys",
+      logo: "🔒",
+      location: "Egypt, KSA, UAE",
+      type: "onsite",
+      roles: [
+        {
+          title: "Business Analyst",
+          department: "Business",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "120+",
+      industry: "Consulting Services, Cyber Security services, Software House",
+      description: "Cybersecurity and IT consulting services",
+      linkedin: "https://www.linkedin.com/company/inovasys/",
+      careers: "https://www.inovasys.com/careers"
+    },
+    {
+      id: "42",
+      name: "Instabug",
+      logo: "🐛",
+      location: "Egypt, Hybrid",
+      type: "hybrid",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.5,
+      employees: "150+",
+      industry: "Software House",
+      description: "Mobile app testing and bug reporting platform",
+      linkedin: "https://www.linkedin.com/company/instabug/",
+      careers: "https://www.instabug.com/careers#bamboohr"
+    },
+    {
+      id: "43",
+      name: "Integrant",
+      logo: "💻",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "200+",
+      industry: "Software House",
+      description: "Software development and technology solutions",
+      linkedin: "https://www.linkedin.com/company/integrant-inc/",
+      careers: "https://apply.workable.com/integrant/"
+    },
+    {
+      id: "44",
+      name: "IP Protocol INC",
+      logo: "🌐",
+      location: "Egypt, UAE",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "80+",
+      industry: "Cyber Security services, Software House",
+      description: "Cybersecurity and network solutions",
+      linkedin: "https://www.linkedin.com/company/ipprotocolinc/",
+      careers: ""
+    },
+    {
+      id: "45",
+      name: "ITCAN",
+      logo: "📱",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "UI/UX",
+          department: "Design",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "100+",
+      industry: "Marketing, Software House",
+      description: "Digital marketing and technology solutions",
+      linkedin: "https://www.linkedin.com/company/itcandigital/",
+      careers: "https://fromitcanwith.teamtailor.com/jobs"
+    },
+    {
+      id: "46",
+      name: "ITWorx",
+      logo: "🏢",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "300+",
+      industry: "Software House",
+      description: "Enterprise software and technology solutions",
+      linkedin: "https://www.linkedin.com/company/itworx/",
+      careers: "https://www.itworx.com/jobs/"
+    },
+    {
+      id: "47",
+      name: "Jadara Solutions",
+      logo: "📊",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Science",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "80+",
+      industry: "Consulting Services, Software House",
+      description: "Data analytics and consulting services",
+      linkedin: "https://www.linkedin.com/company/jadara-solutions/",
+      careers: ""
+    },
+    {
+      id: "48",
+      name: "Jumia",
+      logo: "🛒",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Front-End Developer",
+          department: "Engineering",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.6,
+      employees: "1000+",
+      industry: "E-commerce",
+      description: "Leading e-commerce platform in Africa",
+      linkedin: "https://www.linkedin.com/company/jumia-group/",
+      careers: "https://boards.eu.greenhouse.io/jumia?t=fc26afd2teu"
+    },
+    {
+      id: "49",
+      name: "Khazna",
+      logo: "🏦",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "200+",
+      industry: "Finance / Banking",
+      description: "Digital banking and financial services",
+      linkedin: "https://www.linkedin.com/company/khazna/",
+      careers: ""
+    },
+    {
+      id: "50",
+      name: "Klivr",
+      logo: "💳",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "150+",
+      industry: "Finance / Banking",
+      description: "Digital payment and financial technology",
+      linkedin: "https://www.linkedin.com/company/klivvr/",
+      careers: "https://www.linkedin.com/jobs/search/?currentJobId=3843697224&f_C=77912846&geoId=92000000&origin=COMPANY_PAGE_JOBS_CLUSTER_EXPANSION&originToLandingJobPostings=3843697224%2C3843696922%2C3843698378%2C3868438904%2C3843698452"
+    },
+    {
+      id: "51",
+      name: "Link Development",
+      logo: "🔗",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "250+",
+      industry: "Software House",
+      description: "Software development and technology solutions",
+      linkedin: "https://www.linkedin.com/company/link-development/",
+      careers: "https://linkdevelopment.com/careers/opportunities/"
+    },
+    {
+      id: "52",
+      name: "Linux Plus",
+      logo: "🐧",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "80+",
+      industry: "Software House",
+      description: "Linux and open-source software solutions",
+      linkedin: "",
+      careers: ""
+    },
+    {
+      id: "53",
+      name: "Liquid C2",
+      logo: "🛡️",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "120+",
+      industry: "Cyber Security services, Software House",
+      description: "Cybersecurity and threat intelligence solutions",
+      linkedin: "https://www.linkedin.com/company/liquidc2mena/",
+      careers: "https://liquidc2.com/careers/"
+    },
+    {
+      id: "54",
+      name: "LyRise",
+      logo: "🚀",
+      location: "Egypt, Remote",
+      type: "hybrid",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "100+",
+      industry: "Consulting Services, Software House",
+      description: "AI-powered software development and consulting",
+      linkedin: "https://www.linkedin.com/company/lyriseai/",
+      careers: "https://lyrise.ai/"
+    },
+    {
+      id: "55",
+      name: "MaxAB",
+      logo: "📦",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.5,
+      employees: "300+",
+      industry: "Finance / Banking, Software House",
+      description: "B2B e-commerce and supply chain platform",
+      linkedin: "https://www.linkedin.com/company/maxab/",
+      careers: "https://careers.maxab.io/?#positions"
+    },
+    {
+      id: "56",
+      name: "Misr Digital Innovation",
+      logo: "🏛️",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "200+",
+      industry: "Finance / Banking",
+      description: "Digital innovation and financial technology",
+      linkedin: "",
+      careers: ""
+    },
+    {
+      id: "57",
+      name: "Money Fellows",
+      logo: "💰",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "150+",
+      industry: "Finance / Banking",
+      description: "Digital savings and financial services platform",
+      linkedin: "https://www.linkedin.com/company/moneyfellows/",
+      careers: "https://apply.workable.com/money-fellows/"
+    },
+    {
+      id: "58",
+      name: "mylerz Co",
+      logo: "🚚",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "200+",
+      industry: "Supply Chain, Transportation",
+      description: "E-commerce logistics and delivery services",
+      linkedin: "https://www.linkedin.com/company/mylerz-co/",
+      careers: "https://www.mylerz.com/career"
+    },
+    {
+      id: "59",
+      name: "Naqla",
+      logo: "🚛",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "150+",
+      industry: "Supply Chain, Transportation",
+      description: "Trucking and logistics technology platform",
+      linkedin: "https://www.linkedin.com/company/naqla/",
+      careers: "https://careers.naqla.xyz/jobs/Careers"
+    },
+    {
+      id: "60",
+      name: "Nawy",
+      logo: "🏠",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "120+",
+      industry: "Real State",
+      description: "Real estate technology and property platform",
+      linkedin: "https://www.linkedin.com/company/nawyestate/",
+      careers: "https://apply.workable.com/nawy-real-estate/"
+    },
+    {
+      id: "61",
+      name: "NOMO Fintech",
+      logo: "🏦",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "USD",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "USD",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "150+",
+      industry: "Finance / Banking",
+      description: "Digital banking and financial technology",
+      linkedin: "https://www.linkedin.com/company/nomo-fintech/",
+      careers: "https://jobs.lever.co/bb2bank"
+    },
+    {
+      id: "62",
+      name: "Noon",
+      logo: "🛒",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "UI/UX",
+          department: "Design",
+          salary: "EGP",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.5,
+      employees: "500+",
+      industry: "E-commerce",
+      description: "Leading e-commerce platform in the Middle East",
+      linkedin: "https://www.linkedin.com/company/nooncom/",
+      careers: "https://www.linkedin.com/jobs/search/?currentJobId=3866043028&f_C=18045372&originToLandingJobPostings=3866043028%2C3846772843%2C3870422467"
+    },
+    {
+      id: "63",
+      name: "Paymob",
+      logo: "💳",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "200+",
+      industry: "Finance / Banking",
+      description: "Digital payment and financial technology platform",
+      linkedin: "https://www.linkedin.com/company/paymobcompany/",
+      careers: "https://www.paymob.com/en/careers"
+    },
+    {
+      id: "64",
+      name: "Rabbit",
+      logo: "🐰",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "150+",
+      industry: "E-commerce",
+      description: "Quick commerce and grocery delivery platform",
+      linkedin: "https://www.linkedin.com/company/rabbitmart/",
+      careers: "https://www.rabbitmart.com/careers/"
+    },
+    {
+      id: "65",
+      name: "Rasan",
+      logo: "💳",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "USD",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "USD",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "100+",
+      industry: "E-commerce, FinTech",
+      description: "Digital payment and e-commerce solutions",
+      linkedin: "https://www.linkedin.com/company/rasan-information-technology/",
+      careers: "https://www.linkedin.com/jobs/search/?currentJobId=3861049164&f_C=71925387&geoId=92000000&origin=COMPANY_PAGE_JOBS_CLUSTER_EXPANSION&originToLandingJobPostings=3861049164%2C3860769893%2C3874623369%2C3874614738%2C3869571835%2C3874619465%2C3861929634%2C3869575607%2C3852915587"
+    },
+    {
+      id: "66",
+      name: "Rubikal",
+      logo: "💻",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "120+",
+      industry: "Software House",
+      description: "Software development and technology solutions",
+      linkedin: "https://www.linkedin.com/company/rubikal_llc/",
+      careers: "https://apply.workable.com/rubikal/"
+    },
+    {
+      id: "67",
+      name: "Secure Networks",
+      logo: "🛡️",
+      location: "Egypt, UAE",
+      type: "onsite",
+      roles: [
+        {
+          title: "Business Analyst",
+          department: "Business",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "100+",
+      industry: "Consulting Services, Cyber Security services",
+      description: "Cybersecurity and network security solutions",
+      linkedin: "https://www.linkedin.com/company/secure-networksco/",
+      careers: "https://secure-networksco.com/careers/"
+    },
+    {
+      id: "68",
+      name: "Shahry",
+      logo: "🏦",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "150+",
+      industry: "Finance / Banking",
+      description: "Digital banking and financial services platform",
+      linkedin: "https://www.linkedin.com/company/shahry/",
+      careers: "https://shahry.app/careers"
+    },
+    {
+      id: "69",
+      name: "StatsBomb",
+      logo: "⚽",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Science",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "80+",
+      industry: "Sports",
+      description: "Football analytics and sports data platform",
+      linkedin: "https://www.linkedin.com/company/statsbomb/",
+      careers: "https://statsbomb.bamboohr.com/careers"
+    },
+    {
+      id: "70",
+      name: "Sumerge",
+      logo: "📊",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Engineering",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "120+",
+      industry: "Software House",
+      description: "Data analytics and business intelligence solutions",
+      linkedin: "https://www.linkedin.com/company/sumerge/",
+      careers: "https://www.sumerge.com/careers/"
+    },
+    {
+      id: "71",
+      name: "Taager",
+      logo: "📦",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "200+",
+      industry: "E-commerce",
+      description: "Social commerce and e-commerce platform",
+      linkedin: "https://www.linkedin.com/company/taagercom/",
+      careers: "https://taager.bamboohr.com/careers"
+    },
+    {
+      id: "72",
+      name: "Talabat",
+      logo: "🍕",
+      location: "Egypt, UAE",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.5,
+      employees: "500+",
+      industry: "E-commerce, Food Delivery",
+      description: "Food delivery and e-commerce platform",
+      linkedin: "https://www.linkedin.com/company/talabat-com/mycompany/",
+      careers: "https://careers.deliveryhero.com/jobs?options=252,243&page=1"
+    },
+    {
+      id: "73",
+      name: "Tanmeyah",
+      logo: "🏦",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Front-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "150+",
+      industry: "Finance / Banking",
+      description: "Digital banking and financial services",
+      linkedin: "https://www.linkedin.com/company/tanmeyah/",
+      careers: "https://tanmeyah.com/careers/"
+    },
+    {
+      id: "74",
+      name: "THIQAH",
+      logo: "💼",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "USD",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "QA",
+          department: "Quality Assurance",
+          salary: "USD",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "100+",
+      industry: "Software House",
+      description: "Software development and technology solutions",
+      linkedin: "https://www.linkedin.com/company/thiqah-sa/",
+      careers: "https://careers.thiqah.sa/"
+    },
+    {
+      id: "75",
+      name: "Thndr",
+      logo: "📈",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "120+",
+      industry: "Finance / Banking",
+      description: "Investment and trading platform",
+      linkedin: "https://www.linkedin.com/company/thndrapp/people/?facetGeoRegion=106155005",
+      careers: "https://thndr-talent.freshteam.com/jobs"
+    },
+    {
+      id: "76",
+      name: "Trella",
+      logo: "🚛",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "150+",
+      industry: "Supply Chain, Transportation",
+      description: "Trucking and logistics technology platform",
+      linkedin: "https://www.linkedin.com/company/trellaapp/",
+      careers: "https://www.trella.app/careers"
+    },
+    {
+      id: "77",
+      name: "Trufla",
+      logo: "🛡️",
+      location: "Egypt, Hybrid",
+      type: "hybrid",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "100+",
+      industry: "Insurance",
+      description: "Insurance technology and digital solutions",
+      linkedin: "https://www.linkedin.com/company/truflatech/",
+      careers: "https://trufla.applytojobs.ca/"
+    },
+    {
+      id: "78",
+      name: "TwentyToo",
+      logo: "🤖",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.1,
+      employees: "80+",
+      industry: "Software House",
+      description: "AI-powered software development solutions",
+      linkedin: "https://www.linkedin.com/company/twentytooai/",
+      careers: ""
+    },
+    {
+      id: "79",
+      name: "Valu",
+      logo: "💳",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Data Analytics",
+          department: "Data",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Testing",
+          department: "Quality Assurance",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "120+",
+      industry: "Finance / Banking",
+      description: "Digital payment and financial services",
+      linkedin: "https://www.linkedin.com/company/valuegypt/",
+      careers: ""
+    },
+    {
+      id: "80",
+      name: "Vezeeta",
+      logo: "🏥",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.4,
+      employees: "300+",
+      industry: "Healthcare / Medical",
+      description: "Healthcare booking and medical services platform",
+      linkedin: "https://www.linkedin.com/company/vezeeta/",
+      careers: "https://careers.vezeeta.com/"
+    },
+    {
+      id: "81",
+      name: "Wuzzuf",
+      logo: "💼",
+      location: "Egypt",
+      type: "onsite",
+      roles: [
+        {
+          title: "Back-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Front-End Developer",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.3,
+      employees: "200+",
+      industry: "Staffing and Recruiting",
+      description: "Job search and recruitment platform",
+      linkedin: "",
+      careers: ""
+    },
+    {
+      id: "82",
+      name: "ZINAD IT",
+      logo: "🛡️",
+      location: "Egypt, UAE",
+      type: "onsite",
+      roles: [
+        {
+          title: "Cyber Security",
+          department: "Security",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        },
+        {
+          title: "Software Engineering",
+          department: "Engineering",
+          salary: "Competitive",
+          posted: "Recently",
+          isNew: true,
+          isUrgent: false
+        }
+      ],
+      rating: 4.2,
+      employees: "120+",
+      industry: "Consulting Services, Cyber Security services, Software House",
+      description: "Cybersecurity and software development services",
+      linkedin: "https://www.linkedin.com/company/zinad-security-and-software-services/",
+      careers: "https://www.zinad.net/careers.html"
     }
   ];
 
@@ -368,6 +2716,46 @@ export default function CompaniesPage() {
                   </div>
                 </div>
                 <p className="text-muted-foreground">{company.description}</p>
+                
+                {/* Company Links */}
+                {(company.linkedin || company.careers) && (
+                  <div className="flex gap-2 mt-4">
+                    {company.linkedin && (
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            onClick={() => window.open(company.linkedin, '_blank')}
+                          >
+                            <ExternalLink className="h-4 w-4 mr-1" />
+                            LinkedIn
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          {isRTL ? "زيارة صفحة LinkedIn" : "Visit LinkedIn page"}
+                        </TooltipContent>
+                      </Tooltip>
+                    )}
+                    {company.careers && (
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            onClick={() => window.open(company.careers, '_blank')}
+                          >
+                            <Briefcase className="h-4 w-4 mr-1" />
+                            Careers
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          {isRTL ? "زيارة صفحة الوظائف" : "Visit careers page"}
+                        </TooltipContent>
+                      </Tooltip>
+                    )}
+                  </div>
+                )}
               </CardHeader>
               <CardContent>
                 {/* Jobs Table */}

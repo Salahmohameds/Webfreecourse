@@ -175,6 +175,16 @@
     backdrop-filter: blur(10px);
   }
 
+  .light .navbar-blur {
+    background: hsla(0, 0%, 100%, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .dark .navbar-blur {
+    background: hsla(240, 10%, 3.9%, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
   .course-filter-gap > * {
     margin: 0.25rem;
   }
